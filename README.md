@@ -1,18 +1,31 @@
-# Vue 3 + TypeScript + Vite
+# ISS Тестовое задание
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Сделайте ToDo-приложение, позволяющее управлять текущим списком дел. Дизайн на ваше усмотрение.
 
-## Recommended IDE Setup
+Интерфейс:
+• Список всех задач;
+• Модальное окно “Детальной задачи”, внутри: поле “Название”, поле “Описание”, кнопки “Сохранить” и “Удалить”;
+• \* Можете от себя добавить любые страницы по желанию.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Требования к коду:
+• Vue3 + ts
+• Библиотеки для ui компонентов - на ваше усмотрение;
+• CSS Библиотеки – на ваше усмотрение;
+• Можете пользоваться любыми дополнительными инструментами/модулями из экосистемы vue или других (vuex, persistent-vuex, pinia, dayjs, draggabble или любые другие на ваше усмотрение);
+• Проект должен запускаться скриптом из package.json.
 
-## Type Support For `.vue` Imports in TS
+Функциональность:
+• Добавление задач (для сохранения используйте localstorage);
+• Удаление задач (можно перейти в режим удаления задач, где напротив каждой задачи появляется чекбокс, можно выбрать несколько и удалить);
+• Изменение задач;
+• Сортировка задач (Все, выполненные, не выполненные).
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Запуск
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Для запуска требуется установленный Node.Js
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1.  Склонировать или скачать репозиторий
+2.  Через терминал перейти в папку с проектом
+3.  Выполнить команду `npm i`
+4.  Выполнить команду `npm run dev`
+5.  Перейти по ссылке `http:\\localhost:3000`
