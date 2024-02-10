@@ -1,19 +1,28 @@
 import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "url";
+
 import vue from "@vitejs/plugin-vue";
 
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: "@",
+        replacement: fileURLToPath(new URL("./src", import.meta.url)),
+      },
+    ],
+  },
   plugins: [
     vue(),
     AutoImport({
       dts: "./auto-imports.d.ts",
       defaultExportByFilename: false,
       dirs: ["src/stores"],
-      imports: ["vue", "vue-router"],
+      imports: ["vue"],
       resolvers: [ElementPlusResolver()],
     }),
     Components({
@@ -21,12 +30,11 @@ export default defineConfig({
       dts: "./components.d.ts",
       types: [
         {
-          from: "vue-router",
-          names: ["RouterLink", "RouterView"],
+          from: "vue",
+          names: ["Transition", "TransitionGroup"],
         },
       ],
       resolvers: [ElementPlusResolver()],
     }),
-    tsconfigPaths(),
   ],
 });

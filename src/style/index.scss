@@ -17,3 +17,9 @@
 html {
   color: var(--el-text-color-primary);
 }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
