@@ -31,7 +31,7 @@
       <div class="form-actions">
         <ElButton
           type="primary"
-          @click="()=>{       
+          @click="()=>{
             tasksStore.changeTask(
               (<ITask>editTaskStore.taskData).id,
               <ITask>editTaskStore.taskData
@@ -43,8 +43,11 @@
 
         <ElButton
           type="danger"
-          @click="editTaskStore.closeEditDialog()">
-          Отмена
+          @click="() => {
+            tasksStore.removeTasks([(<ITask>editTaskStore.taskData).id]);
+            editTaskStore.closeEditDialog();
+          }">
+          Удалить
         </ElButton>
       </div>
     </ElForm>
@@ -77,5 +80,7 @@
   .form-actions {
     display: flex;
     gap: 5px;
+
+    color: red;
   }
 </style>
